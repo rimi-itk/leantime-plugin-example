@@ -1,7 +1,5 @@
 <?php
 
-namespace Leantime\Plugins\ITK\Services;
+namespace Leantime\Plugins\Itk\Services;
 
-final class Itk {
-
-}
+final class Itk {}

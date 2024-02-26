@@ -10,7 +10,7 @@ use Leantime\Domain\Tickets\Services\Tickets as TicketService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-final class Todos extends Controller
+final class Tickets extends Controller
 {
     public function __construct(
         private readonly TicketService $ticketsService,
@@ -29,10 +29,9 @@ final class Todos extends Controller
         if (isset($params['id'])) {
             $ticket = $this->ticketsService->getTicket($params['id']);
             if ($ticket) {
-                return new JsonResponse($ticket);
+                $this->tpl->assign('ticket', $ticket);
+                return $this->tpl->display('itk.ticket');
             }
-            // @TODO How to throw a not found exception?
-            return new JsonResponse(['message' => 'not found'], Response::HTTP_NOT_FOUND);
         }
 
         $userId = $_SESSION['userdata']["id"] ?? '';
@@ -43,6 +42,7 @@ final class Todos extends Controller
         // $tickets = $this->ticketsService->getAll($criteria);
         $tickets = $this->ticketsService->getAllOpenUserTickets($userId);
 
-        return new JsonResponse($tickets);
+        $this->tpl->assign('tickets', $tickets);
+        return $this->tpl->display('itk.tickets');
     }
 }
