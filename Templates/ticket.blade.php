@@ -1,4 +1,4 @@
-@extends('itk::layout')
+@extends('example::layout')
 
 @php /** @var \Leantime\Domain\Tickets\Models\Tickets $ticket */ @endphp
 

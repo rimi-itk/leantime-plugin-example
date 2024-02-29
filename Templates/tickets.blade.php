@@ -1,10 +1,10 @@
-@extends('itk::layout')
+@extends('example::layout')
 
 @section('title', __('Tickets'))
 
 @section('content')
 @foreach ($tickets as $ticket)
-    <a href="/itk/tickets/{{ $ticket['id'] }}" id="ticket-{{ $ticket['id'] }}">
+    <a href="/example/tickets/{{ $ticket['id'] }}" id="ticket-{{ $ticket['id'] }}">
         <div class="ticket">
             <h2>{{ $ticket['id'] }}: {{ $ticket['headline'] }}</h2>
 
