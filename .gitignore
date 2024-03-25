@@ -1,3 +1,8 @@
 composer.lock
 vendor
 *.cache
+node_modules
+
+# Release
+*.tar.gz
+checksum.txt
