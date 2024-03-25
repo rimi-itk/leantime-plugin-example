@@ -57,6 +57,8 @@
     -->
     <!-- Leantime PHP_CodeSniffer configuration end -->
 
+    <exclude-pattern>tailwind.config.js</exclude-pattern>
+    <exclude-pattern>webpack.mix.js</exclude-pattern>
     <exclude-pattern>assets/</exclude-pattern>
     <exclude-pattern>vendor*/</exclude-pattern>
     <exclude-pattern>node_modules/</exclude-pattern>

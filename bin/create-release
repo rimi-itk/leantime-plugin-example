@@ -13,12 +13,16 @@ fi
 
 cd "$project_dir"
 
-build_dir=build-release
-name="leantime-plugin-example-${tag}.tar.gz"
+plugin_name=Example
+name="leantime-plugin-${plugin_name}-${tag}.tar.gz"
 
 composer install --no-dev
-mkdir -p "$build_dir"
-rsync --archive --compress --exclude "*.tar.gz" --exclude ".git*" --exclude "bin" --exclude "composer.*" . "$build_dir"
-tar --create --file "$name" "$build_dir"
-rm -fr "$build_dir"
+
+yarn install
+npx mix
+
+mkdir -p "$plugin_name"
+rsync --archive --compress --exclude-from="$script_dir/build-exclude.txt" . "$plugin_name"
+tar --create --file "$name" "$plugin_name"
+rm -fr "$plugin_name"
 sha256sum "$name" >| checksum.txt

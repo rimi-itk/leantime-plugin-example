@@ -2,6 +2,7 @@ composer.lock
 vendor
 *.cache
 node_modules
+dist
 
 # Release
 *.tar.gz
