@@ -33,7 +33,7 @@
                 "version": "v3.1.0-beta",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/Leantime/leantime/releases/download/v3.1.0-beta/Leantime-v3.1.0-beta.zip"
+                    "url": "https://github.com/Leantime/leantime/archive/refs/tags/v3.1.0-beta.zip"
                 }
             }
         }

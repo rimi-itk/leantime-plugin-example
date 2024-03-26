@@ -21,8 +21,5 @@ composer install --no-dev
 yarn install
 npx mix
 
-mkdir -p "$plugin_name"
-rsync --archive --compress --exclude-from="$script_dir/build-exclude.txt" . "$plugin_name"
-tar --create --file "$name" "$plugin_name"
-rm -fr "$plugin_name"
+tar --create --file "$name" --exclude-vcs --exclude-from="$script_dir/build-exclude.txt" --transform "s/^\./$plugin_name/" .
 sha256sum "$name" >| checksum.txt

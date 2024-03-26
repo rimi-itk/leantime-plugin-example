@@ -8,6 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - [#1](https://github.com/rimi-itk/leantime-plugin-example/pull/1)
-  Hmm …
+  Translations and assets
 
 [Unreleased]: https://github.com/rimi-itk/leantime-plugin-example
