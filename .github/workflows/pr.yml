@@ -74,3 +74,14 @@ jobs:
       - run: |
           docker run --user root --rm --volume ${PWD}:/app itkdev/php8.1-fpm:latest composer install
           docker run --user root --rm --volume ${PWD}:/app itkdev/php8.1-fpm:latest composer coding-standards-check/phpcs
+
+  code-analysis-phpstan:
+    name: code-analysis/phpstan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@master
+      - run: |
+          docker run --user root --rm --volume ${PWD}:/app itkdev/php8.1-fpm:latest composer install
+          docker run --user root --rm --volume ${PWD}:/app itkdev/php8.1-fpm:latest composer code-analysis/phpstan

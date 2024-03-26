@@ -58,6 +58,13 @@ docker run --tty --interactive --rm --volume ${PWD}:/app --workdir /app node:20 
 docker run --tty --interactive --rm --volume ${PWD}:/app --workdir /app node:20 yarn coding-standards-apply
 ```
 
+### Code analysis
+
+```shell
+docker run --tty --interactive --rm --volume ${PWD}:/app itkdev/php8.1-fpm:latest composer install
+docker run --tty --interactive --rm --volume ${PWD}:/app itkdev/php8.1-fpm:latest composer code-analysis
+```
+
 ## Release
 
 ```shell
