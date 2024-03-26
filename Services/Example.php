@@ -7,4 +7,11 @@ namespace Leantime\Plugins\Example\Services;
  */
 final class Example
 {
+    /**
+     * @return bool
+     */
+    public function install(): bool
+    {
+        return true;
+    }
 }

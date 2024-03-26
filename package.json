@@ -1,0 +1,28 @@
+{
+    "name": "leantime-example",
+    "description": "",
+    "version": "0.1.0",
+    "main": "tailwind.config.js",
+    "repository": "https://github.com/itk-dev/leantime-dataexport",
+    "license": "MIT",
+    "devDependencies": {
+        "@tsconfig/recommended": "^1.0.3",
+        "laravel-mix": "^6.0.49",
+        "markdownlint-cli": "^0.39.0",
+        "mix-tailwindcss": "^1.3.0",
+        "postcss": "^8.4.33",
+        "postcss-selector-parser": "^6.0.15",
+        "prettier": "^3.2.4",
+        "tailwindcss": "^3.4.1",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.3.3"
+    },
+    "scripts": {
+        "coding-standards-check/prettier": "prettier assets --check",
+        "coding-standards-check/markdownlint": "markdownlint --ignore LICENSE.md '*.md' docs/",
+        "coding-standards-check": "yarn coding-standards-check/prettier; yarn coding-standards-check/markdownlint",
+        "coding-standards-apply/eslint": "prettier assets --write",
+        "coding-standards-apply/markdownlint": "markdownlint --ignore LICENSE.md '*.md' docs/ --fix",
+        "coding-standards-apply": "yarn coding-standards-apply/eslint; yarn coding-standards-apply/markdownlint"
+    }
+}

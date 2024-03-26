@@ -51,7 +51,7 @@ final class Tickets extends Controller
             }
         }
 
-        $userId = $_SESSION['userdata']["id"] ?? '';
+        $userId = $_SESSION['userdata']['id'] ?? '';
         $criteria = [
             'currentUser' => $userId,
         ];
